@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Exercise_6
 {
@@ -14,11 +10,13 @@ namespace Exercise_6
         static double[] MasNums;
         static void Main(string[] args)
         {
+            Console.WriteLine("Задание 6:");
+            Console.WriteLine("Построить N элементов последовательности  а_{к} = (а_{к–1} + 1) / (а_{к-2} + 2) * а_{к–3}.");
             while (true)
             {
                 int count;
 
-                Console.WriteLine("Введите a1:");
+                Console.WriteLine("Введите a_{1}:");
                 while (true)
                 {
                     if (double.TryParse(Console.ReadLine(), out FirstNum))
@@ -31,7 +29,7 @@ namespace Exercise_6
                     }
                 }
 
-                Console.WriteLine("Введите a2:");
+                Console.WriteLine("Введите a_{2}:");
                 while (true)
                 {
                     if (double.TryParse(Console.ReadLine(), out SecondNum))
@@ -44,7 +42,7 @@ namespace Exercise_6
                     }
                 }
 
-                Console.WriteLine("Введите a3:");
+                Console.WriteLine("Введите a_{3}:");
                 while (true)
                 {
                     if (double.TryParse(Console.ReadLine(), out ThirdNum))
@@ -98,13 +96,11 @@ namespace Exercise_6
                 {
                     Console.WriteLine("Последовательность строго возрастающая.");
                 }
-
-                if (IsNondecreasing)
+                else if (IsNondecreasing)
                 {
                     Console.WriteLine("Последовательность монотонно неубывающая.");
                 }
-
-                if (!(IsIncreasing && IsNondecreasing))
+                else if (!(IsIncreasing && IsNondecreasing))
                 {
                     Console.WriteLine("Последовательность не является возрастающей и не является неубывающей.");
                 }
